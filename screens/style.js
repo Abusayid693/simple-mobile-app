@@ -9,7 +9,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#171717",
     paddingBottom: 12,
-
   },
   cardBody: {
     display: "flex",
@@ -43,43 +42,14 @@ export const styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     borderRadius: 20,
-    overflow: 'visible',
+    overflow: "visible",
     shadowOffset: { width: 0, height: 4 },
-    shadowColor: '#000',
-    shadowOpacity: 0.4
-    // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.45);
+    shadowColor: "#000",
+    shadowOpacity: 0.4,
   },
-  
-  profileInfo: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    paddingLeft: 15,
-    paddingRight: 15,
-  },
-  leftWrapper: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    width: "40%",
-  },
-  profileInfoWrappr: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  likeIcon: {
-    color: "blue",
-  },
+
   tinyLogo: {
     width: 17,
     height: 17,
-  },
-  text_sm: {
-    color: "white",
-    fontSize: 16,
-    lineHeight: 30,
-    marginLeft: 5,
   },
 });
