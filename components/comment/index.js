@@ -1,21 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
-
+import { Text, View, Image, TouchableOpacity, ScrollView } from "react-native";
+import { styles } from "./style";
 
 const CommentDebounced = () => {
   const [commentLike, setCommentLike] = useState(0);
   return (
     <TouchableOpacity onPress={() => setCommentLike(!commentLike)}>
       <Image
-        // style={styles.tinyLogo}
         onPress={() => setPostLike(0)}
         source={
           commentLike
@@ -28,17 +20,12 @@ const CommentDebounced = () => {
 };
 
 export const UserComments = ({ comments }) => {
-  const [commentLike, setCommentLike] = useState(0);
-
   return (
-    <ScrollView style={commentsStyles.container}>
+    <ScrollView style={styles.container}>
       {comments.map((comment, j) => (
-        <View
-          style={commentsStyles.singleComment}
-          key={`${j}_${comment.imageSrc}`}
-        >
-          <Image style={commentsStyles.prfile_logo} source={comment.imageSrc} />
-          <View style={commentsStyles.textWrapper}>
+        <View style={styles.singleComment} key={`${j}_${comment.imageSrc}`}>
+          <Image style={styles.prfile_logo} source={comment.imageSrc} />
+          <View style={styles.textWrapper}>
             <Text
               style={{
                 color: "#A7A7A7",
@@ -63,22 +50,3 @@ export const UserComments = ({ comments }) => {
     </ScrollView>
   );
 };
-
-const commentsStyles = StyleSheet.create({
-  singleComment: {
-    color: "white",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginTop: 30,
-  },
-  prfile_logo: {
-    width: 38,
-    height: 38,
-    borderRadius: 100,
-    borderColor: "white",
-    borderWidth: 2.5,
-  },
-});

@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
-  Text,
   View,
   Image,
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import {styles} from "./style"
 
 export const CommentInput = ({ text, onInputChange, insertNewComment }) => {
   return (
-    <View style={newCommentsWrapper.container}>
+    <View style={styles.container}>
       <TouchableOpacity onPress={() => setPostLike(0)}>
         <Image
-          style={newCommentsWrapper.prfile_logo}
+          style={styles.prfile_logo}
           source={require("../../assets/boy_profile.jpeg")}
         />
       </TouchableOpacity>
       <TextInput
-        style={newCommentsWrapper.input}
+        style={styles.input}
         onChangeText={(text) => onInputChange(text)}
         value={text}
         placeholder="useless placeholder"
@@ -26,7 +25,7 @@ export const CommentInput = ({ text, onInputChange, insertNewComment }) => {
       />
       <TouchableOpacity onPress={insertNewComment}>
         <Image
-          style={newCommentsWrapper.tinyLogo}
+          style={styles.tinyLogo}
           source={require("../../assets/feather_send.png")}
         />
       </TouchableOpacity>
@@ -34,32 +33,3 @@ export const CommentInput = ({ text, onInputChange, insertNewComment }) => {
   );
 };
 
-const newCommentsWrapper = StyleSheet.create({
-  container: {
-    width: "95%",
-    height: 45,
-    backgroundColor: "#fff",
-    borderRadius: 20,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingLeft: 10,
-    paddingRight: 10,
-    alignItems: "center",
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  input: {
-    height: "100%",
-    width: "60%",
-    borderWidth: 0,
-    padding: 10,
-  },
-  prfile_logo: {
-    width: 38,
-    height: 38,
-    borderRadius: 100,
-    borderColor: "white",
-    borderWidth: 2.5,
-  },
-});
