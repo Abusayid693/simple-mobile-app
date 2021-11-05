@@ -42,8 +42,14 @@ export const styles = StyleSheet.create({
     height: windowWidth / 1.1,
     marginLeft: "auto",
     marginRight: "auto",
-    borderRadius: 25,
+    borderRadius: 20,
+    overflow: 'visible',
+    shadowOffset: { width: 0, height: 4 },
+    shadowColor: '#000',
+    shadowOpacity: 0.4
+    // box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.45);
   },
+  
   profileInfo: {
     display: "flex",
     justifyContent: "space-between",

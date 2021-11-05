@@ -21,6 +21,12 @@ export default function App() {
   const [comments, setComments] = useState(fakeComments);
   const [commentsCount, setCommentsCount] = useState(comments.length);
 
+
+  const [shadowOffsetWidth, setShadowOffsetWidth] = useState(0);
+  const [shadowOffsetHeight, setShadowOffsetHeight] = useState(0);
+  const [shadowRadius, setShadowRadius] = useState(0);
+  const [shadowOpacity, setShadowOpacity] = useState(0.1);
+
   const handleNewComment = () => {
     // alert(inputComment)
     const commentSample = {
@@ -52,7 +58,7 @@ export default function App() {
           />
         </View>
         <Image
-          style={styles.profile_pic}
+          style={[styles.profile_pic, styles.shadow]}
           source={require("../assets/profile.png")}
           onPress={() => setPostLike(1)}
         />
