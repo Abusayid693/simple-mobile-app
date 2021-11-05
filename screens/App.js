@@ -1,18 +1,24 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
   Image,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
 } from "react-native";
 import { CommentInput } from "../components/inputTaker/index";
 import { UserComments } from "../components/comment/index";
-import {fakeComments} from "../Constants/fakeComments"
-import {styles} from "./style"
+import { fakeComments } from "../Constants/fakeComments";
+import {AppLoading} from "expo"
+import { styles } from "./style";
+import * as Font from "expo-font";
+
+
 
 export default function App() {
+
+  const [customFonts,setCustomFonts] =  useState(false);
 
   const [postLike, setPostLike] = useState(0);
   const [likesCount, setLikesCount] = useState(123);
@@ -21,11 +27,9 @@ export default function App() {
   const [comments, setComments] = useState(fakeComments);
   const [commentsCount, setCommentsCount] = useState(comments.length);
 
+  
 
-  const [shadowOffsetWidth, setShadowOffsetWidth] = useState(0);
-  const [shadowOffsetHeight, setShadowOffsetHeight] = useState(0);
-  const [shadowRadius, setShadowRadius] = useState(0);
-  const [shadowOpacity, setShadowOpacity] = useState(0.1);
+
 
   const handleNewComment = () => {
     // alert(inputComment)
@@ -37,7 +41,7 @@ export default function App() {
     };
     setInputComment("");
     setComments((comments) => [...comments, commentSample]);
-    setCommentsCount(commentsCount+1);
+    setCommentsCount(commentsCount + 1);
   };
 
   return (
@@ -85,15 +89,14 @@ export default function App() {
             </View>
 
             <View style={styles.profileInfoWrappr}>
-
-                <Image
-                  style={{
-                    width: 18.6,
-                    height: 17,
-                  }}
-                  onPress={() => setPostLike(0)}
-                  source={require("../assets/message.png")}
-                />
+              <Image
+                style={{
+                  width: 18.6,
+                  height: 17,
+                }}
+                onPress={() => setPostLike(0)}
+                source={require("../assets/message.png")}
+              />
 
               <Text style={styles.text_sm}>{commentsCount}</Text>
             </View>
@@ -121,4 +124,3 @@ export default function App() {
     </View>
   );
 }
-

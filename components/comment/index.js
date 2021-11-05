@@ -9,7 +9,12 @@ const CommentDebounced = () => {
     <TouchableOpacity onPress={() => setCommentLike(!commentLike)}>
       <Image
         onPress={() => setPostLike(0)}
-        source={ commentLike ? require("../../assets/liked_b.png") : require("../../assets/like_b.png")} />
+        source={
+          commentLike
+            ? require("../../assets/liked_b.png")
+            : require("../../assets/like_b.png")
+        }
+      />
     </TouchableOpacity>
   );
 };
@@ -22,10 +27,17 @@ export const UserComments = ({ comments }) => {
           <View style={styles.wrapper}>
             <Image style={styles.prfile_logo} source={comment.imageSrc} />
             <View style={styles.textWrapper}>
-              <Text style={{ color: "#A7A7A7", fontSize: 16, lineHeight: 30}} >
+              <Text
+                style={{
+                  color: "#A7A7A7",
+                  fontSize: 16,
+                  fontFamily: "Inder",
+                  lineHeight: 30,
+                }}
+              >
                 {comment.userName}
               </Text>
-              <Text style={{ color: "#fff"}} >
+              <Text style={{ color: "#fff", fontFamily: "Inder" }}>
                 {comment.content}
               </Text>
             </View>

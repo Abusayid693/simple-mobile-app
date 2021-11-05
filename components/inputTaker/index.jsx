@@ -22,6 +22,7 @@ export const CommentInput = ({ text, onInputChange, insertNewComment }) => {
         value={text}
         placeholder="useless placeholder"
         keyboardType="numeric"
+        placeholderTextColor={'grey'}
       />
       <TouchableOpacity onPress={insertNewComment}>
         <Image
