@@ -5,7 +5,7 @@
 - Like - dislike comments and post
 - Add more comments on post
 
-![Gif](https://i.imgur.com/CbqfNd0.gif)
+![Gif](https://i.imgur.com/qt2BRyT.gif)
 
 ![](https://i.imgur.com/oqyUSSu.png)
 Tested on IOS
