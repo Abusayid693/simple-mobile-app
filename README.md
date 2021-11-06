@@ -5,6 +5,8 @@
 - Like - dislike comments and post
 - Add more comments on post
 
+### Please check gif for preview
+
 ![Gif](https://i.imgur.com/qt2BRyT.gif)
 
 ![](https://i.imgur.com/oqyUSSu.png)
